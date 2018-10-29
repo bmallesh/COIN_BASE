@@ -69,7 +69,7 @@ class Signup extends Component {
 		event.preventDefault()
 		const valid = this.registerValidate();
 		if (valid) {
-			axios.post('/user/', {
+			axios.post('/user/coinbase/api/register', {
 				firstname: this.state.firstname,
 				lastname: this.state.lastname,
 				username: this.state.username,
@@ -148,7 +148,7 @@ class Signup extends Component {
 										type="text"
 										id="username"
 										name="username"
-										placeholder="Username"
+										placeholder="Email"
 										value={this.state.username}
 										onChange={this.handleChange}
 									/>

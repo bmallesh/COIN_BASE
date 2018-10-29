@@ -4,15 +4,19 @@ const bcrypt = require('bcryptjs');
 const router = express.Router()
 const User = require('../database/models/user')
 const passport = require('../passport')
-mj = require("mongojs")
-conn = mj("mongodb://localhost:27017/simple-mern-passport")
+
 
 // forgot password API
 router.post('/forgot', function (req, res) {
     req = req.body;
     User.find({ username: req.username }, function (err, result) {
         if (result.length == 0) {
-            console.log("email not exist")
+            console.log("email not exist");
+            res.send({
+                status: "failure",
+                data: result,
+                error: ""
+            })
         } else {
             var mailobj = mail.createTransport({
                 service: 'gmail',
@@ -25,7 +29,7 @@ router.post('/forgot', function (req, res) {
                 from: 'bmallesh450@gmail.com',
                 to: req.username,
                 subject: "activation key",
-                html: "<a href='http://localhost:3000/resetpwd?uid=" + result[0]._id + "'>click me</a>"
+                html: '<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="background-color: #0c1e42;padding: 30px"><table><tr><th><h1 style="color:white;text-align:center;">Coinebase</h1></th></tr><tr><th>&nbsp;</th></tr></table><div style="background-color: white;margin: 0 auto;border-radius: 10px;"><table><tr><th style="text-align:center;color:white">Coinebase</th></tr></table><table style="margin: 0 auto;"><tr style="padding:50px;"><th>Hi, ' + result[0].firstname + '</th></tr><tr><td>&nbsp;</td></tr><tr><td &nbsp;</td></tr><tr><td style="text-align: center;font: size 10px;">You recently requested to reset your Coinbase account password.</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr> <tr><td style="text-align: center;"><button style="background-color: #0c1e42; padding:20px;color: white;border-radius: 10px;font-size:20px;"><a style="color:white;text-decoration: none;" href="http://localhost:3000/resetpwd?uid=' + result[0]._id + '">Reset Password</a></button></td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td style="text-align: center;">To receive more help on this issue, please contact our Support Team by replying directly to thismessage.</td></tr><tr><td>&nbsp;</td></tr><tr><td></td></tr></table></div><div><p style="color:white;text-align:center;">&copy;2018 Coinebase</p></div></body></html>'
             }, async (err, result) => {
                 if (err) {
                     console.log(err)
@@ -38,18 +42,18 @@ router.post('/forgot', function (req, res) {
                     console.log(result)
                 }
             })
+            res.send({
+                status: "success",
+                data: result,
+                error: ""
+            })
         }
-        res.send({
-            status: "success",
-            data: result,
-            error: ""
-        })
-});
+    });
 })
 
 
 // user signup API
-router.post('/', (req, res) => {
+router.post('/coinbase/api/register', (req, res) => {
     console.log('user signup');
     const { firstname, lastname, username, password } = req.body
     // ADD VALIDATION
@@ -72,12 +76,12 @@ router.post('/', (req, res) => {
                 if (err) return res.json(err)
                 res.send(savedUser)
             })
-            sendingEmail(username,'signup','<h1>thank you</h1>')
+            sendingEmail(username, 'signup',firstname)
         }
     })
 })
 
-function sendingEmail(email,subject,html){
+function sendingEmail(email, subject,name) {
     var mailobj = mail.createTransport({
         service: 'gmail',
         auth: {
@@ -89,7 +93,7 @@ function sendingEmail(email,subject,html){
         from: 'bmallesh450@gmail.com',
         to: email,
         subject: subject,
-        html: html
+        html: '<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="background-color: #0c1e42;padding: 30px"><table><tr><th><h1 style="color:white;text-align:center;">Coinebase</h1></th></tr><tr><th>&nbsp;</th></tr></table><div style="background-color: white;margin: 0 auto;border-radius: 10px;"><table><tr><th style="text-align:center;color:white">Coinebase</th></tr></table><table style="margin: 0 auto;"><tr style="padding:50px;"><th><h1>Hi, ' + name + '</h1></th></tr><tr><td>&nbsp;</td></tr><tr><td &nbsp;</td></tr><tr><td style="text-align: center;font: size 10px;"><h2>Thanks for the Subscription.You will be get the access to our services.Enjoy the Subscription.</h2></td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr> <tr><td></td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td></td></tr></table></div><div><p style="color:white;text-align:center;">&copy;2018 Coinebase</p></div></body></html>'
     }, async (err, result) => {
         if (err) {
             console.log(err)

@@ -5,6 +5,11 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.liststyle ul li{
+  letter-spacing: 0.03rem;
+  line-height: 1rem;
+}
+
 a {
   color: #2dc997;
 }
@@ -53,10 +58,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: background 0.5s;
 }
 
+.emailmargin{margin-right: 10px;}
 @media (max-width: 768px) {
+  .emailmargin{margin-right: 0px;}
   .back-to-top {
     bottom: 15px;
   }
+  input{margin-bottom: 10px!important;}
 }
 
 .back-to-top:focus {
@@ -115,6 +123,7 @@ h1, h2, h3, h4, h5, h6 {
   #header #logo img {
     max-height: 40px;
   }
+  
 }
 
 #header.header-fixed {
@@ -178,6 +187,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 28px;
     line-height: 36px;
   }
+  /* .textleft{padding-top: 10px;} */
 }
 
 #hero h2 {
@@ -201,10 +211,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 8px 28px;
-  border-radius: 50px;
+  padding: 14px 28px;
+  border-radius: 5px;
   transition: 0.5s;
-  margin: 10px;
+  margin: 0px;
   border: 2px solid #fff;
   color: #fff;
 }
@@ -539,7 +549,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   flex-direction: column;
   text-align: center;
   border-radius: 50%;
-  border: 2px solid #2dc997;
+  border: 2px solid #c9d9f1;
 }
 
 #about .about-container .icon-box .icon i {
@@ -575,7 +585,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #facts .counters span {
   font-size: 48px;
   display: block;
-  color: #2dc997;
+  color: #2567d0;
 }
 
 #facts .counters p {
@@ -617,7 +627,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center;
   width: 72px;
   height: 72px;
-  background: #2dc997;
+  /* background: #2dc997; */
+  border: 2px solid #3867d0;
 }
 
 #services .icon a {
@@ -631,7 +642,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #services .box:hover .icon {
   background: #fff;
-  border: 2px solid #2dc997;
+  border: 2px solid #c9d9f1;
 }
 
 #services .box:hover .icon i {
@@ -647,6 +658,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 18px;
   margin-bottom: 15px;
   text-transform: uppercase;
+  margin-top: 35px;
 }
 
 #services .title a {

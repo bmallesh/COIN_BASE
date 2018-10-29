@@ -12,7 +12,8 @@ class forgot extends Component {
         this.state = {
             username: '',
             password: '',
-            redirectTo: null
+            redirectTo: null,
+            invalidEmailError:''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -62,6 +63,10 @@ class forgot extends Component {
                         this.setState({
                             redirectTo:'/login'
                         })
+                    }else{
+                        this.setState({
+                            invalidEmailError:'User does not exist'
+                        })
                     }
                 }).catch(error => {
                     console.log('email error: ')
@@ -81,13 +86,14 @@ class forgot extends Component {
             return (
                 <Container>
                     <Row className="pt-5">
+                        <Col><h4 className="pt-2 text-white">Forgot Your Password?</h4></Col>
+                    </Row>
+                    <Row className="pt-3">
                         <Col sm="12" md="4"></Col>
                         <Col sm="12" md="4">
                             <div className="pt-4 rounded" style={{ color: "black", backgroundColor: "white" }}>
-                                <h4>Forgot Your Password?</h4>
                                 <form className="form-horizontal">
                                     <FormGroup className="mx-4">
-                                        <Label for="exampleEmail" className="pr-2">Email</Label>
                                         <Input
                                             className="form-input"
                                             type="text"
@@ -99,6 +105,7 @@ class forgot extends Component {
                                         />
                                     </FormGroup>
                                     <div style={{ fontSize: 15, color: "red" }}>{this.state.usernameError}</div>
+                                    <div style={{ fontSize: 15, color: "red" }}>{this.state.invalidEmailError}</div>
                                     <div className="form-group ">
                                         <button
                                             className="button"

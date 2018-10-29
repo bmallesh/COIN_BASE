@@ -74,10 +74,10 @@ class Home extends Component {
         <br/> sell, and manage your digital currency.</h2>
 
       <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <input type="text" placeholder="Email Address"/>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <input type="text" placeholder="Email Address" class="emailmargin"/>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="col-lg-6 col-md-6 col-sm-12">
           <a href="#" class="btn-get-started">Get Started</a>
         </div>
       </div>
@@ -241,7 +241,7 @@ class Home extends Component {
       <div class="container">
         <div class="row about-container">
 
-          <div class="col-lg-6">
+          <div class="col-lg-6 col-md-6 col-sm-12 ">
 
             <div class="icon-box">
               <div class="icon">
@@ -283,7 +283,7 @@ class Home extends Component {
             </div>
           </div>
 
-          <div class="col-lg-6">
+          <div class="col-lg-6 col-md-6 col-sm-12 ">
             <img src={require('./img/app-product.png')} class="appproduct"/>
           </div>
         </div>
@@ -299,11 +299,14 @@ class Home extends Component {
         <div class="row">
           <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="box">
-              <div class="icon">
-                <a href="">
-                  <img src={require("./img/icon-safe.png")} class="secureimg" alt="Secure storage"/>
-                </a>
-              </div>
+              
+                
+                  {/* <img src={require("./img/icon-safe.png")} class="secureimg" alt="Secure storage"/> */}
+                  <div class="icon">
+                    <img src="https://www2.coinbase.com/assets/icon-safe.png" class="secureimg" alt="Mobile application icon"/>
+                  </div>
+                
+              
               <h4 class="title">
                 <a href="">Secure storage</a>
               </h4>
@@ -317,9 +320,9 @@ class Home extends Component {
           <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="box">
               <div class="icon">
-                <a href="">
+                
                   <img src="https://www2.coinbase.com/assets/icon-insurance.png" class="secureimg" alt="Protected by insurance"/>
-                </a>
+                
               </div>
               <h4 class="title">
                 <a href="">Protected by insurance</a>
@@ -333,9 +336,9 @@ class Home extends Component {
           <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="box">
               <div class="icon">
-                <a href="">
+                
                   <img src="https://www2.coinbase.com/assets/icon-shield.png" class="secureimg" alt="Industry best practices"/>
-                </a>
+                
               </div>
               <h4 class="title">
                 <a href="">Industry best practices</a>
@@ -406,10 +409,10 @@ class Home extends Component {
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 textright">
+            <div class="col-lg-6 col-md-6 col-sm-12 textright">
               <input type="text" placeholder="Email Address"/>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 textleft">
+            <div class="col-lg-6 col-md-6 col-sm-12 textleft">
               <a href="#" class="btn-get-started">Get Started</a>
             </div>
           </div>
@@ -419,10 +422,10 @@ class Home extends Component {
  <footer id="footer">
     <div class="container-fluid liststyle">
       <div class="row">
-        <div class="col-md-1">
+        <div class="col-md-1 col-sm-12">
 
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-12">
           <ul>
             <li>
               <strong class="footercoinbase">coinbase</strong>
@@ -432,7 +435,7 @@ class Home extends Component {
             <li>© 2018 Coinbase</li>
           </ul>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-12">
           <ul>
             <li>
               <strong class="footercoinbase">Products</strong>
@@ -448,7 +451,7 @@ class Home extends Component {
             <li>Wallet</li>
           </ul>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-12">
           <ul>
             <li>
               <strong class="footercoinbase">Learn</strong>
@@ -461,7 +464,7 @@ class Home extends Component {
             <li>Status</li>
           </ul>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-12">
           <ul>
             <li>
               <strong class="footercoinbase">Company</strong>
@@ -474,7 +477,7 @@ class Home extends Component {
             <li>Support</li>
           </ul>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-12">
           <ul>
             <li>
               <strong class="footercoinbase">Social</strong>
@@ -484,7 +487,7 @@ class Home extends Component {
             <li>Facebook</li>
           </ul>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1 col-sm-12">
         </div>
       </div>
     </div>

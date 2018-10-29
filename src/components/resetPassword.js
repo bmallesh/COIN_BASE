@@ -94,10 +94,12 @@ class resetPassword extends Component {
             return (
                 <Container>
                     <Row className="pt-5">
-                        <Col sm="12" md={{ size: 4, offset: 3 }}></Col>
-                        <Col sm="12" md={{ size: 6, offset: 3 }}>
+                        <Col><h4 className="pt-2 text-white">Reset Password</h4></Col>
+                    </Row>
+                    <Row className="pt-3">
+                        <Col sm="12" md="4"></Col>
+                        <Col sm="12" md="4">
                             <div className="pt-4 rounded" style={{ color: "black", backgroundColor: "white" }}>
-                                <h4>Reset Password</h4>
                                 <form className="form-horizontal">
                                     <FormGroup className="mx-4">
                                         <Input
@@ -124,9 +126,8 @@ class resetPassword extends Component {
                                     </FormGroup>
                                     <div style={{ fontSize: 12, color: "red" }}>{this.state.retypepasswordError}</div>
                                     <div className="form-group ">
-                                        <div className="col-7"></div>
                                         <button
-                                            className="button col-3 col-mr-auto"
+                                            className="button col-3"
                                             onClick={this.handleSubmit}
                                         >submit</button>
                                     </div>
@@ -136,7 +137,7 @@ class resetPassword extends Component {
 
 
                         </Col>
-                        <Col sm="12" md={{ size: 4, offset: 3 }}></Col>
+                        <Col sm="12" md="4"></Col>
                     </Row>
                 </Container>
             )

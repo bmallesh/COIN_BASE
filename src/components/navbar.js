@@ -35,22 +35,22 @@ class Navbar extends Component {
         return (
             <div>
                 <header className="navbar App-header" id="nav-container">
-                    <div className="col-10 text-left">
+                    <div className="col-6 text-left">
                         {/* <img src={require('./img/coinbase-logo.png')} alt="" title="" class="logoheight" /> */}
 
                         <Link to="/" className="btn btn-link text-secondary">
                             <span className="text-white"><h3><strong>HOME</strong></h3></span>
                         </Link>
                     </div>
-                    <div className="col-2 textright" >
+                    <div className="col-6" >
                         {loggedIn ? (
-                            <section className="navbar-section">
+                            <section className="navbar-section pull-right">
                                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
                                     <span className="text-secondary">Logout</span></Link>
 
                             </section>
                         ) : (
-                                <section className="navbar-section">
+                                <section className="navbar-section pull-right">
                                     <Link to="/login" className="btn btn-link text-white">
                                         <span className="text-white">Login</span>
                                     </Link>
