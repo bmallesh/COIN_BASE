@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import {
-	Button, Container, Row, Col, FormGroup, Label, Input
+	Button, Container, Row, Col, FormGroup, Label, Input,Alert
 } from 'reactstrap';
 
 class Signup extends Component {
@@ -18,7 +18,8 @@ class Signup extends Component {
 			lastnameError: '',
 			usernameError: '',
 			password: '',
-			existUserError: ''
+			existUserError: '',
+			alertMsg:null
 
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -81,8 +82,15 @@ class Signup extends Component {
 						console.log('successful signup')
 						console.log(response)
 						this.setState({ //redirect to login page
-							redirectTo: '/login'
+							alertMsg: true
 						})
+						setTimeout(
+                            function() {
+                                this.setState({redirectTo:'/login'});
+                            }
+                            .bind(this),
+                            1000
+                        );
 					} else {
 						this.setState({
 							existUserError: "Email already taken"
@@ -101,6 +109,21 @@ class Signup extends Component {
 		if (this.state.redirectTo) {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
+			if (this.state.alertMsg) {
+                return (
+                    <Container>
+                        <Row>
+                            <Col sm="12" md="4"></Col>
+                            <Col sm="12" md="4">
+                                <Alert color="primary">
+                                    You have been successfuly Signedup.you will be redirected to login
+                                </Alert>
+                            </Col>
+                            <Col sm="12" md="4"></Col>
+                        </Row>
+                    </Container>
+                )
+            }
 			return (
 				<Container>
 					<Row className="pt-5">

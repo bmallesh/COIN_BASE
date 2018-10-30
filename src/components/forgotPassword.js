@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import {Container, Row, Col, FormGroup, Input} from 'reactstrap';
+import { Container, Row, Col, FormGroup, Input, Alert } from 'reactstrap';
 import axios from 'axios'
 
 class forgot extends Component {
@@ -10,15 +10,16 @@ class forgot extends Component {
             username: '',
             password: '',
             redirectTo: null,
-            invalidEmailError:''
+            invalidEmailError: '',
+            alertMsg: null,
+            color: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.createNotification= this.createNotification.bind(this)
 
     }
 
-    
-    
 
     handleChange(event) {
         this.setState({
@@ -28,13 +29,10 @@ class forgot extends Component {
 
     forgotpasswordValidate() {
         let usernameError = '';
-
         let pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
         if (!pattern.test(this.state.username)) {
-
             usernameError = "Enter valid Email"
         }
-
         if (usernameError) {
             this.setState({ usernameError })
             return false;
@@ -42,7 +40,6 @@ class forgot extends Component {
         else {
             this.setState({ usernameError: '' })
         }
-
         return true;
     }
 
@@ -59,13 +56,20 @@ class forgot extends Component {
                 .then(response => {
                     console.log('mail sended ')
                     console.log(response)
-                    if(response.data.status=="success"){
+                    if (response.data.status == "success") {
                         this.setState({
-                            redirectTo:'/login'
+                            alertMsg: true,
+                            color: 'warning',
                         })
-                    }else{
+                        setTimeout(
+                             ()=>{
+                                this.setState({ redirectTo: '/login' });
+                            },
+                            6000
+                        );
+                    } else {
                         this.setState({
-                            invalidEmailError:'User does not exist'
+                            invalidEmailError: 'User does not exist'
                         })
                     }
                 }).catch(error => {
@@ -73,19 +77,30 @@ class forgot extends Component {
                     console.log(error);
 
                 })
-
         }
-
-
     }
 
     render() {
         if (this.state.redirectTo) {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
+            if (this.state.alertMsg) {
+                return (
+                    <Container>
+                        <Row>
+                            <Col sm="12" md="4"></Col>
+                            <Col sm="12" md="4">
+                                <Alert color="primary">
+                                    Please check your email we have sent you a reset password link.
+                                </Alert>
+                            </Col>
+                            <Col sm="12" md="4"></Col>
+                        </Row>
+                    </Container>
+                )
+            }
             return (
                 <Container>
-                    
                     <Row className="pt-5">
                         <Col><h4 className="pt-2 text-white">Forgot Your Password?</h4></Col>
                     </Row>
@@ -114,14 +129,11 @@ class forgot extends Component {
                                             type="submit">Reset Password</button>
                                     </div>
                                 </form>
-
                             </div>
-
                         </Col>
                         <Col sm="12" md="4"></Col>
                     </Row>
                 </Container>
-
             )
         }
     }

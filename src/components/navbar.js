@@ -45,6 +45,8 @@ class Navbar extends Component {
                     <div className="col-6" >
                         {loggedIn ? (
                             <section className="navbar-section pull-right">
+                                <Link to="/pricing" className="btn btn-link text-secondary">
+                                    <span className="text-white">Pricing</span></Link>
                                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
                                     <span className="text-white">Logout</span></Link>
 
