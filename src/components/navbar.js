@@ -14,7 +14,7 @@ class Navbar extends Component {
     logout(event) {
         event.preventDefault()
         console.log('logging out')
-        axios.post('/user/logout').then(response => {
+        axios.post('/user/coinbase/api/logout').then(response => {
             console.log(response.data)
             if (response.status === 200) {
                 this.props.updateUser({
@@ -46,7 +46,7 @@ class Navbar extends Component {
                         {loggedIn ? (
                             <section className="navbar-section pull-right">
                                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                                    <span className="text-secondary">Logout</span></Link>
+                                    <span className="text-white">Logout</span></Link>
 
                             </section>
                         ) : (

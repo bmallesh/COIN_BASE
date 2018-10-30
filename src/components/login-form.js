@@ -54,7 +54,7 @@ class LoginForm extends Component {
         console.log('handleSubmit')
         if(isValid){
             axios
-            .post('/user/login', {
+            .post('/user/coinbase/api/login', {
                 username: this.state.username,
                 password: this.state.password
             })

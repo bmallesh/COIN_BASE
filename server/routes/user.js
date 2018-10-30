@@ -7,7 +7,7 @@ const passport = require('../passport')
 
 
 // forgot password API
-router.post('/forgot', function (req, res) {
+router.post('/coinbase/api/forgot', function (req, res) {
     req = req.body;
     User.find({ username: req.username }, function (err, result) {
         if (result.length == 0) {
@@ -105,7 +105,7 @@ function sendingEmail(email, subject,name) {
 
 //  user login API
 router.post(
-    '/login',
+    '/coinbase/api/login',
     function (req, res, next) {
         console.log('routes/user.js, login, req.body: ');
         console.log(req.body)
@@ -123,7 +123,7 @@ router.post(
 
 
 // user password reset
-router.post('/reset', function (req, res) {
+router.post('/coinbase/api/reset', function (req, res) {
     console.log('routes/user.js, reset password req.body');
     console.log(req.body)
     data = req.body
@@ -153,7 +153,7 @@ router.get('/', (req, res, next) => {
 })
 
 //  user logout API
-router.post('/logout', (req, res) => {
+router.post('/coinbase/api/logout', (req, res) => {
     if (req.user) {
         req.logout()
         res.send({ msg: 'logging out' })

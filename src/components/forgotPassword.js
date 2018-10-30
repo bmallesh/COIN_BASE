@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Container, Row, Col, FormGroup, Label, Input
-} from 'reactstrap';
+import {Container, Row, Col, FormGroup, Input} from 'reactstrap';
 import axios from 'axios'
 
 class forgot extends Component {
@@ -19,6 +16,9 @@ class forgot extends Component {
         this.handleChange = this.handleChange.bind(this)
 
     }
+
+    
+    
 
     handleChange(event) {
         this.setState({
@@ -53,7 +53,7 @@ class forgot extends Component {
 
         if (isValid) {
             axios
-                .post('user/forgot', {
+                .post('user/coinbase/api/forgot', {
                     username: this.state.username,
                 })
                 .then(response => {
@@ -85,6 +85,7 @@ class forgot extends Component {
         } else {
             return (
                 <Container>
+                    
                     <Row className="pt-5">
                         <Col><h4 className="pt-2 text-white">Forgot Your Password?</h4></Col>
                     </Row>
