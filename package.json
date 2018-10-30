@@ -37,5 +37,5 @@
     "concurrently": "^3.5.1",
     "nodemon": "^1.18.5"
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://localhost:4020"
 }

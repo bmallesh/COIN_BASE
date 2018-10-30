@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import {
-	Button, Container, Row, Col, FormGroup, Label, Input,Alert
+	 Container, Row, Col, FormGroup, Input,Alert
 } from 'reactstrap';
 
 class Signup extends Component {
