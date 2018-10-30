@@ -16,8 +16,6 @@ class forgot extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
-        this.createNotification= this.createNotification.bind(this)
-
     }
 
 
