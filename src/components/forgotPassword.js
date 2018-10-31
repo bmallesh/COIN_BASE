@@ -48,7 +48,7 @@ class forgot extends Component {
 
         if (isValid) {
             axios
-                .post('user/coinbase/api/forgot', {
+                .post('/coinbase/api/forgot', {
                     username: this.state.username,
                 })
                 .then(response => {

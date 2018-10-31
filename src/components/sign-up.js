@@ -70,7 +70,7 @@ class Signup extends Component {
 		event.preventDefault()
 		const valid = this.registerValidate();
 		if (valid) {
-			axios.post('/user/coinbase/api/register', {
+			axios.post('/coinbase/api/register', {
 				firstname: this.state.firstname,
 				lastname: this.state.lastname,
 				username: this.state.username,

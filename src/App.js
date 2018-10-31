@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   getUser() {
-    axios.get('/user/').then(response => {
+    axios.get('/coinbase/api/getUserDetails').then(response => {
       console.log('Get user response: ')
       console.log(response.data)
       if (response.data.user) {

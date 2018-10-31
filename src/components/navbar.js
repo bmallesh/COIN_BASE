@@ -13,7 +13,7 @@ class Navbar extends Component {
     logout(event) {
         event.preventDefault()
         console.log('logging out')
-        axios.post('/user/coinbase/api/logout').then(response => {
+        axios.post('/coinbase/api/logout').then(response => {
             console.log(response.data)
             if (response.status === 200) {
                 this.props.updateUser({

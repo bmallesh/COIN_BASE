@@ -60,7 +60,7 @@ class resetPassword extends Component {
         const isValid = this.passwordValidate()
         if (isValid) {
             axios
-                .post('/user/coinbase/api/reset', {
+                .post('/coinbase/api/reset', {
                     newpassword: this.state.newpassword,
                     uid: this.state.uid
                 })

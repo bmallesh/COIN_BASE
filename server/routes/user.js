@@ -104,8 +104,7 @@ function sendingEmail(email, subject,name) {
 }
 
 //  user login API
-router.post(
-    '/coinbase/api/login',
+router.post('/coinbase/api/login',
     function (req, res, next) {
         console.log('routes/user.js, login, req.body: ');
         console.log(req.body)
@@ -142,7 +141,7 @@ router.post('/coinbase/api/reset', function (req, res) {
 })
 
 //  getting user data API
-router.get('/', (req, res, next) => {
+router.get('/coinbase/api/getUserDetails', (req, res, next) => {
     console.log('===== user!!======')
     console.log(req.user)
     if (req.user) {
