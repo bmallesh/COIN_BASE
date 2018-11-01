@@ -1,0 +1,128 @@
+h5{font-weight: bold !important;}
+p{font-weight: 300;}
+.plan{text-align: left;}
+.plan h2 {margin-bottom: 2px;}
+
+        .pricing_quote {
+            flex: 1 0 !important;
+            margin: 2em 0 0 2.5em;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .pic_circle {
+            width: 4em;
+            height: auto;
+            border-radius: 4em;
+        }
+
+        .pricing_content {
+            font-size: 1.875em;
+            line-height: 1.5;
+            margin: 1em auto;
+            color: #37404a;
+            width: 100%;
+            display: block;
+        }
+
+        .pricing_author {
+            font-size: .75em;
+            color: #a5a5a5;
+            margin: 2em 0 0 2.5em;
+            line-height: 1.5;
+            width: 100%;
+            text-align: center;
+        }
+
+        .pricing_author_name {
+            color: #a5a5a5;
+        }
+
+        .pricing_author_position {}
+
+        .faq_content {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 1.1em;
+            padding: 0 20px;
+            color: #555;
+            margin: 40px auto;
+        }
+
+        .faq_block {
+            border: none;
+            margin-bottom: 2.5em;
+            font-size: 20px;
+            line-height: 34px;
+            font-weight: 300;
+            color: #6c737a;
+            font-size: 18px;
+            text-align: left;
+        }
+
+
+
+
+
+.btnn{width: 40%;background: #88c5c7;border-radius: 5px;padding: 7px 13px;margin: 0 auto;color: #fff;border: none;}
+.pricingdiv{background-color: white}
+
+.basic{border:2px solid #88c5c7; border-radius: 5px; padding: 30px 20px 40px 20px; margin-top:20px; background: rgba(136,197,199,.05);}
+.pro{border:2px solid #7bbc90; border-radius: 5px; padding: 30px 20px 40px 20px; margin-top:20px; 
+  color: #7bbc90;
+  background: #f8fffa;
+  box-shadow: 0 0 16px 0 rgba(123,188,144,.6);
+}
+.proplus{border:2px solid #e4b83a; border-radius: 5px; padding: 30px 20px 40px 20px; margin-top:20px; background: rgba(228,184,58,.05);}
+
+
+.basicfree{border:1px solid #eee; background: rgba(136,197,199,.05);color: #88c5c7;font-size: 16px;
+    padding:6px;margin-bottom: 10px;}
+.prousd{border: 1px solid #eee;background: rgba(136,197,199,.05);color: #88c5c7;font-size: 16px;
+    padding: 6px;margin-bottom: 10px;}
+.proplususd{border: 1px solid #eee;background: rgba(136,197,199,.05);color: #88c5c7;
+    font-size: 16px;padding: 6px;margin-bottom: 10px; }
+.bsc ul{
+  list-style-type: none;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+.bsc ul li{
+  padding-top: 1rem;
+}
+
+.btnn .startfree{
+ text-decoration: none !important;
+ color: #ffffff;
+}
+.padleft{padding-left:15px !important;}
+.padright{padding-right: 15px !important;}
+.padleftright{padding-left: 15px !important; padding-right:15px !important;}
+
+
+.getknow{color: #88c5c7}
+.responses{margin-top: 20px;}
+.the-essentials{color: #000;}
+.basicfreestyles{color:#88c5c7; padding: 20px 10px 0px 20px;}
+.padstyles{padding:0px;}
+.padbck{background: #88c5c7;color: #fff;padding: 10px 0px 2px 0px;}
+.basicfreest{color:#7bbc90; padding: 20px 10px 0px 20px;}
+.resmo{background: #7bbc90;color: #fff;padding: 10px 0px 2px 0px;}
+.basicfr{color:#e4b83a; padding: 20px 10px 0px 20px;}
+.responsmo{background: #e4b83a; padding: 10px 0px 2px 0px; color: #fff;}
+.signing{margin-top:0; color: #6c737a; text-align: left;}
+.nada{color: #6c737a; text-align: left;}
+.profeature{margin-top:0; color: #6c737a; text-align: left;}
+.typeform{color: #6c737a; text-align: left;}
+.pricing{padding-top: 30px;}
+.bsc ul li{text-align: left;}
+
+@media only screen and (max-width : 768px) {
+    .pricing_quote {margin: 2em 0 0 0em!important;}
+    .plan{text-align: center}
+    p{line-height: 1.2rem;font-size: 15px; text-align: center !important;}
+    .faq_block{text-align: center;}
+    .basic{height: auto  !important;}
+}
+
+.liststyle ul li{text-align: left; font-weight: 300; font-style: normal;}

@@ -37,7 +37,7 @@ class Navbar extends Component {
                     <div className="col-6 text-left">
                         {/* <img src={require('./img/coinbase-logo.png')} alt="" title="" class="logoheight" /> */}
 
-                        <Link to="/" className="btn btn-link text-secondary">
+                        <Link to="/" className="btn btn-link text-secondary homelogo">
                             <span className="text-white"><h3><strong>HOME</strong></h3></span>
                         </Link>
                     </div>

@@ -21,15 +21,15 @@ router.post('/coinbase/api/forgot', function (req, res) {
             var mailobj = mail.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: 'bmallesh450@gmail.com',
-                    pass: 'Anusha123@'
+                    user: 'democoinbase@gmail.com',
+                    pass: 'coinbase@123'
                 }
             });
             mailobj.sendMail({
-                from: 'bmallesh450@gmail.com',
+                from: 'democoinbase@gmail.com',
                 to: req.username,
-                subject: "activation key",
-                html: '<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="background-color: #0c1e42;padding: 30px"><table><tr><th><h1 style="color:white;text-align:center;">Coinebase</h1></th></tr><tr><th>&nbsp;</th></tr></table><div style="background-color: white;margin: 0 auto;border-radius: 10px;"><table><tr><th style="text-align:center;color:white">Coinebase</th></tr></table><table style="margin: 0 auto;"><tr style="padding:50px;"><th>Hi, ' + result[0].firstname + '</th></tr><tr><td>&nbsp;</td></tr><tr><td &nbsp;</td></tr><tr><td style="text-align: center;font: size 10px;">You recently requested to reset your Coinbase account password.</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr> <tr><td style="text-align: center;"><button style="background-color: #0c1e42; padding:20px;color: white;border-radius: 10px;font-size:20px;"><a style="color:white;text-decoration: none;" href="http://localhost:3000/resetpwd?uid=' + result[0]._id + '">Reset Password</a></button></td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td style="text-align: center;">To receive more help on this issue, please contact our Support Team by replying directly to thismessage.</td></tr><tr><td>&nbsp;</td></tr><tr><td></td></tr></table></div><div><p style="color:white;text-align:center;">&copy;2018 Coinebase</p></div></body></html>'
+                subject: "Reset Password",
+                html: '<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="background-color: #0c1e42;padding: 30px"><table><tr><th><h1 style="color:white;text-align:center;">Coinebase</h1></th></tr><tr><th>&nbsp;</th></tr></table><div style="background-color: white;margin: 0 auto;border-radius: 10px;"><table><tr><th style="text-align:center;color:white">Coinebase</th></tr></table><table style="margin: 0 auto;"><tr style="padding:50px;"><th>Hi, ' + result[0].firstname + '</th></tr><tr><td>&nbsp;</td></tr><tr><td &nbsp;</td></tr><tr><td style="text-align: center;font: size 10px;">You recently requested to reset your Coinbase account password.</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr> <tr><td style="text-align: center;"><button style="background-color: #0c1e42; padding:20px;color: white;border-radius: 10px;font-size:20px;"><a style="color:white;text-decoration: none;" href="http://ec2-18-209-34-30.compute-1.amazonaws.com/resetpwd?uid=' + result[0]._id + '">Reset Password</a></button></td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td style="text-align: center;">To receive more help on this issue, please contact our Support Team by replying directly to thismessage.</td></tr><tr><td>&nbsp;</td></tr><tr><td></td></tr></table></div><div><p style="color:white;text-align:center;">&copy;2018 Coinebase</p></div></body></html>'
             }, async (err, result) => {
                 if (err) {
                     console.log(err)
@@ -76,7 +76,7 @@ router.post('/coinbase/api/register', (req, res) => {
                 if (err) return res.json(err)
                 res.send(savedUser)
             })
-            sendingEmail(username, 'signup',firstname)
+            sendingEmail(username, 'Coinbase',firstname)
         }
     })
 })
@@ -85,12 +85,12 @@ function sendingEmail(email, subject,name) {
     var mailobj = mail.createTransport({
         service: 'gmail',
         auth: {
-            user: 'bmallesh450@gmail.com',
-            pass: 'Anusha123@'
+            user: 'democoinbase@gmail.com',
+            pass: 'coinbase@123'
         }
     });
     mailobj.sendMail({
-        from: 'bmallesh450@gmail.com',
+        from: 'democoinbase@gmail.com',
         to: email,
         subject: subject,
         html: '<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="background-color: #0c1e42;padding: 30px"><table><tr><th><h1 style="color:white;text-align:center;">Coinebase</h1></th></tr><tr><th>&nbsp;</th></tr></table><div style="background-color: white;margin: 0 auto;border-radius: 10px;"><table><tr><th style="text-align:center;color:white">Coinebase</th></tr></table><table style="margin: 0 auto;"><tr style="padding:50px;"><th><h1>Hi, ' + name + '</h1></th></tr><tr><td>&nbsp;</td></tr><tr><td &nbsp;</td></tr><tr><td style="text-align: center;font: size 10px;"><h2>Thanks for the Subscription.You will be get the access to our services.Enjoy the Subscription.</h2></td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr> <tr><td></td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td></td></tr></table></div><div><p style="color:white;text-align:center;">&copy;2018 Coinebase</p></div></body></html>'
