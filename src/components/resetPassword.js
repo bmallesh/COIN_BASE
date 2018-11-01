@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect} from 'react-router-dom'
 import axios from 'axios'
+import Navbar from './navbar'
+
 import {
      Container, Row, Col, FormGroup, Input
    } from 'reactstrap';
@@ -93,6 +95,7 @@ class resetPassword extends Component {
         } else {
             return (
                 <Container>
+                    <Navbar/>
                     <Row className="pt-5">
                         <Col><h4 className="pt-2 text-white">Reset Password</h4></Col>
                     </Row>

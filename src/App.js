@@ -56,14 +56,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-   
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        {/* greet user if logged in: */}
-  
+        {/* <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        {this.state.loggedIn &&
+          <p className="join">Join the party, {this.state.username}!</p>
+        } */}
         {/* Routes to different components */}
         <Route
           exact path="/"
-          component={Home} />
+          render={() =>
+          <Home/>} />
         <Route
           path="/login"
           render={() =>

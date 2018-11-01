@@ -4,7 +4,7 @@ import {
  Button, Container, Row, Col, FormGroup, Label, Input
 } from 'reactstrap';
 import axios from 'axios'
-
+import Navbar from './navbar'
 class LoginForm extends Component {
     constructor() {
         super()
@@ -91,6 +91,7 @@ class LoginForm extends Component {
         } else {
             return (
                 <Container>
+                    <Navbar/>
                     <Row className="pt-5">
                         <Col><h4 className="pt-2 text-white">Sign in your account</h4></Col>
                     </Row>

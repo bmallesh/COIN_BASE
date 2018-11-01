@@ -4,6 +4,7 @@ import axios from 'axios'
 import {
 	 Container, Row, Col, FormGroup, Input,Alert
 } from 'reactstrap';
+import Navbar from './navbar'
 
 class Signup extends Component {
 	constructor() {
@@ -126,6 +127,7 @@ class Signup extends Component {
             }
 			return (
 				<Container>
+					<Navbar/>
 					<Row className="pt-5">
 						<Col><h4 className="pt-2 text-white">Sign up your account</h4></Col>
 					</Row>

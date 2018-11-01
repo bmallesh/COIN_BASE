@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Container, Row, Col, FormGroup, Input, Alert } from 'reactstrap';
 import axios from 'axios'
+import Navbar from './navbar'
+
 
 class forgot extends Component {
     constructor() {
@@ -99,6 +101,7 @@ class forgot extends Component {
             }
             return (
                 <Container>
+                    <Navbar/>
                     <Row className="pt-5">
                         <Col><h4 className="pt-2 text-white">Forgot Your Password?</h4></Col>
                     </Row>

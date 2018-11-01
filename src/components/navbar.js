@@ -7,6 +7,9 @@ import axios from 'axios'
 class Navbar extends Component {
     constructor() {
         super()
+        this.state = {
+            redirectTo: null,
+        }
         this.logout = this.logout.bind(this)
     }
 
@@ -20,6 +23,9 @@ class Navbar extends Component {
                     loggedIn: false,
                     username: null
                 })
+                this.setState({
+                    redirectTo:'/login'
+                })
             }
         }).catch(error => {
             console.log('Logout error')
@@ -30,14 +36,16 @@ class Navbar extends Component {
         const loggedIn = this.props.loggedIn;
         console.log('navbar render, props: ')
         console.log(this.props);
-
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
         return (
             <div>
                 <header className="navbar App-header" id="nav-container">
                     <div className="col-6 text-left">
                         {/* <img src={require('./img/coinbase-logo.png')} alt="" title="" class="logoheight" /> */}
 
-                        <Link to="/" className="btn btn-link text-secondary homelogo">
+                        <Link to="/" className="btn btn-link text-secondary">
                             <span className="text-white"><h3><strong>HOME</strong></h3></span>
                         </Link>
                     </div>
@@ -66,6 +74,7 @@ class Navbar extends Component {
             </div>
 
         );
+                        }
 
     }
 }
